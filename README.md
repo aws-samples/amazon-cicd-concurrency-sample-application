@@ -1,11 +1,26 @@
-## My Project
+## Concurrency issue code (with gradle) for unittest & codeguru
+---
+### Sample code for AWS CI/CD pipeline with CodeGuru & UnitTest to improve code quality
 
-TODO: Fill this README out!
+this code have a Concurrency issue and Credential issue.
+if you want test and fix this code.
 
-Be sure to:
+8 thread using put fuction in hashmap same time. 
+![ex_screenshot](https://codequality.workshop.aws/images/structure.svg)
 
-* Change the title in this README
-* Edit your repository description on GitHub
+It covers simple branch build and deployment, UnitTest report, and CodeGuru which automatically performs code review when create pull-requests.
+
+* All sample code committing develop branch.
+* This code made for AWS CI/CD pipeline with CodeGuru & UnitTest to improve code quality. 
+* if you want test this code visiting [here](https://codequality.workshop.aws/)
+
+
+---
+## Build & Unittest
+
+```bash
+./gradlew clean build   
+```
 
 ## Security
 
