@@ -1,0 +1,17 @@
+version: 0.2
+   
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - java -version
+      - gradle -version
+  build:
+    commands:
+      - ./gradlew clean build    
+artifacts:
+  files:
+    - '**/*'
+  name: concurrencysample-$(date +%Y-%m-%d)
+

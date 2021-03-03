@@ -1,0 +1,24 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+
+> Task :run
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Apr 16, 2020 11:02:29 PM software.amazon.codeguruprofilerjavaagent.profile.metadata.AWSEC2Instance lookUpInstanceType
+INFO: Could not extract instance type from EC2 metadata: Unable to contact EC2 metadata service.
+Apr 16, 2020 11:02:29 PM software.amazon.codeguruprofilerjavaagent.profile.metadata.FargateMetadataFetcher getJsonFromEcsMetadata
+INFO: Unable to build URL to get ECS metadata: no protocol: null/task
+Apr 16, 2020 11:02:30 PM software.amazon.codeguruprofilerjavaagent.Profiler start
+INFO: Starting the profiler : Profiler{profilingGroupName=concurrencysample-profiler, agentMetadata=AgentMetadata{fleetInfo=FleetInstance{id=a6d955c2-e7ee-469b-b406-e4b4b72a4a24, type=UNKNOWN, costPerSecond=null, vCPUs=null}}, isRunning=false, isProfiling=false}
+Apr 16, 2020 11:02:30 PM software.amazon.codeguruprofilerjavaagent.ProfilingCommand start
+================================
+INFO: Profiling scheduled, sampling rate is PT1S
+Start Concurrency Make Erro Test
+================================
+
+singleton repo instance created
+Apr 16, 2020 11:08:43 PM software.amazon.codeguruprofilerjavaagent.ProfilingCommand reportProfile
+INFO: Attempting to report profile data: start=2020-04-16T14:02:32.567509Z end=2020-04-16T14:08:28.979150Z force=false memoryRefresh=false numberOfTimesSampled=35

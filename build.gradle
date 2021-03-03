@@ -1,0 +1,76 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+apply plugin: 'jacoco'
+
+mainClassName = 'com.example.concurrencysample.ConcurrencyCheckout'
+
+
+// tag::repositories[]
+repositories { 
+    mavenCentral() 
+    maven {
+        url = uri("https://d1osg35nybn3tt.cloudfront.net")
+    }
+}
+// end::repositories[]
+jacoco {
+    toolVersion = "0.8.6"
+    reportsDir = file("$buildDir/jacoco_report")
+}
+// tag::jar[]
+jar {
+    baseName = 'concurrency-sample'
+    version =  '0.1.0'
+}
+// end::jar[]
+
+// tag::dependencies[]
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+	implementation 'com.amazonaws:codeguru-profiler-java-agent:1.1.1'
+    compile 'com.amazonaws:aws-java-sdk-dynamodb:1.11.434'
+    compile "joda-time:joda-time:2.2"
+    compile 'com.github.cbismuth:junit-repeat-rule:1.1.2'
+    testCompile("junit:junit:4.12")
+    testRuntime("org.junit.vintage:junit-vintage-engine:4.12.0-M4")
+
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.0.0-M4")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.0-M4")
+
+    // Enable use of the JUnitPlatform Runner within the IDE
+    testCompile("org.junit.platform:junit-platform-runner:1.0.0-M4")
+}
+// end::dependencies[]
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        csv.enabled false
+        html.destination file("${buildDir}/jacoco_html")
+    }
+    finalizedBy 'jacocoTestCoverageVerification'
+}
+jacocoTestCoverageVerification {
+  violationRules {
+   
+    rule {
+      element = 'CLASS'
+      limit {
+        counter = 'LINE'
+        value = 'COVEREDRATIO'
+        minimum = 0.20
+      }
+      excludes = [
+            'com.example.concurrencysample.ConcurrencyCheckout'
+        ]
+
+    }
+  }
+}
+// tag::wrapper[]
+// end::wrapper[]

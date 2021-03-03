@@ -1,0 +1,7 @@
+build/
+bin/
+*.class
+.project
+.DS_Store
+*.lock
+*.bin
