@@ -30,7 +30,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-	implementation 'com.amazonaws:codeguru-profiler-java-agent:1.1.1'
+	implementation 'com.amazonaws:codeguru-profiler-java-agent:1.2.2'
     compile 'com.amazonaws:aws-java-sdk-dynamodb:1.11.434'
     compile "joda-time:joda-time:2.2"
     compile 'com.github.cbismuth:junit-repeat-rule:1.1.2'
