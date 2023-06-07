@@ -1,11 +1,12 @@
-package com.example.concurrencysample;
+package software.example.concurrencysample;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import software.fasterxml.jackson.core.JsonProcessingException;
+import software.fasterxml.jackson.databind.ObjectMapper;
 
 public class Concurrency {
     private final long id;
