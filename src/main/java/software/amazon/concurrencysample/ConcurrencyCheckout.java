@@ -1,4 +1,4 @@
-package com.example.concurrencysample;
+package software.amazon.concurrencysample;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;

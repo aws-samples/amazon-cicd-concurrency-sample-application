@@ -1,4 +1,4 @@
-package com.example.concurrencysample;
+package software.amazon.concurrencysample;
 
 public class BasicCheckMap  extends Thread{
     int tname = 0;
