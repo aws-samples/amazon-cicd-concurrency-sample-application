@@ -36,16 +36,15 @@ public class SingletonRepo {
     public synchronized static SingletonRepo getInstance() {
         if (singletonrepo == null) {
             singletonrepo = new SingletonRepo();
-
-            ac = new BasicAWSCredentials(ACCESS_KEY, SECERET_KEY);
-
-            dynamodb = AmazonDynamoDBClientBuilder
-                    .standard()
-            .withRegion("us-west-2")
-            .withCredentials(new AWSStaticCredentialsProvider(ac) )
-            .build();
             System.out.println("singleton repo instance created");
         }
+        ac = new BasicAWSCredentials(ACCESS_KEY, SECERET_KEY);
+
+        dynamodb = AmazonDynamoDBClientBuilder
+                .standard()
+        .withRegion("us-west-2")
+        .withCredentials(new AWSStaticCredentialsProvider(ac) )
+        .build();
         return singletonrepo;
     }
     public Concurrency get(int product_code){
